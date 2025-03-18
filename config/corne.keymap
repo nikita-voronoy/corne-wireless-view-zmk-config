@@ -16,6 +16,16 @@
             bindings = <&kp LEFT_WIN>;
             key-positions = <15 16>;
         };
+
+        game_layer {
+            bindings = <&tog 3>;
+            key-positions = <17 22>;
+        };
+
+        base_layer {
+            bindings = <&none>;
+            key-positions = <29 22>;
+        };
     };
 
     keymap {
