@@ -18,7 +18,7 @@
         };
 
         printscreen {
-            bindings = <&kp PRINTSCREEN>;
+            bindings = <&kp LEFT_WIN &kp LSHFT &kp PRINTSCREEN>;
             key-positions = <27 28>;
         };
     };
