@@ -18,7 +18,7 @@
         };
 
         printscreen {
-            bindings = <&kp RG(LS(PRINTSCREEN))>;
+            bindings = <&kp PRINTSCREEN>;
             key-positions = <27 28>;
         };
     };
