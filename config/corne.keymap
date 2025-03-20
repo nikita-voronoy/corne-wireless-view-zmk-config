@@ -16,16 +16,6 @@
             bindings = <&kp LEFT_WIN>;
             key-positions = <15 16>;
         };
-
-        game_layer {
-            bindings = <&tog 0>;
-            key-positions = <17 22>;
-        };
-
-        base_layer {
-            bindings = <&none>;
-            key-positions = <29 22>;
-        };
     };
 
     keymap {
@@ -62,14 +52,13 @@
         };
 
         function_layer {
+            display-name = "Fn";
             bindings = <
 &kp F1  &kp F2  &kp F3  &kp F4  &kp F5  &kp F6    &kp F7  &kp F8  &kp F9  &kp F10  &kp F11  &kp F12
 &trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans   &trans   &trans
 &trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans   &trans   &trans
                         &trans  &trans  &trans    &trans  &trans  &trans
             >;
-
-            label = "Fn";
         };
     };
 };
