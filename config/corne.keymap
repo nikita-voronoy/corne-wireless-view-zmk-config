@@ -12,31 +12,44 @@
     combos {
         compatible = "zmk,combos";
 
-        printscreen {
+        linux_printscreen {
             bindings = <&kp LG(LS(PRINTSCREEN))>;
             key-positions = <27 28>;
+            layers = <0>;
+        };
+
+        mac_screenshot {
+            bindings = <&kp LG(LS(NUMBER_4))>;
+            key-positions = <27 28>;
+            layers = <1>;
+        };
+
+        lgtm {
+            bindings = <&lgtm>;
+            key-positions = <21 17>;
         };
     };
 
     macros {
-        new_macro: new_macro {
+        linux_switch: new_macro {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&none>;
+            bindings = <&bt BT_SEL 0 &to 0>;
             label = "NEW_MACRO";
         };
-    };
 
-    behaviors {
-        EscAlt: EscAlt {
-            compatible = "zmk,behavior-hold-tap";
-            label = "ESCALT";
-            bindings = <&kp>, <&gresc>;
+        mac_switch: mac_switch {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&bt BT_SEL 1 &to 1>;
+            label = "MAC_SWITCH";
+        };
 
-            #binding-cells = <2>;
-            flavor = "tap-preferred";
-            tapping-term-ms = <200>;
-            hold-trigger-key-positions = <12>;
+        lgtm: lgtm {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&none &kp LS(O) &kp H &kp SPACE &kp S &kp H &kp I &kp T &kp COMMA &kp SPACE &kp T &kp H &kp I &kp S &kp SPACE &kp C &kp O &kp D &kp E &kp SPACE &kp I &kp S &kp SPACE &kp A &kp W &kp E &kp S &kp O &kp M &kp E &kp EXCL &kp EXCL &kp EXCL>;
+            label = "LGTM";
         };
     };
 
@@ -86,9 +99,9 @@
         function_layer {
             display-name = "Fn";
             bindings = <
-&kp F1      &kp F2        &kp F3        &kp F4        &kp F5        &kp F6          &kp F7  &kp F8  &kp F9  &kp F10  &kp F11  &kp F12
-&bt BT_CLR  &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4    &trans  &trans  &trans  &to 0    &trans   &trans
-&trans      &trans        &trans        &trans        &trans        &trans          &trans  &to 1   &trans  &trans   &trans   &trans
+&kp F1      &kp F2         &kp F3       &kp F4        &kp F5        &kp F6          &kp F7  &kp F8  &kp F9  &kp F10  &kp F11  &kp F12
+&bt BT_CLR  &linux_switch  &mac_switch  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4    &trans  &trans  &trans  &to 0    &trans   &trans
+&trans      &trans         &trans       &trans        &trans        &trans          &trans  &to 1   &trans  &trans   &trans   &trans
                                         &trans        &trans        &trans          &trans  &trans  &trans
             >;
         };
