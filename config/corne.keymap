@@ -44,13 +44,6 @@
             bindings = <&bt BT_SEL 1 &to 1>;
             label = "MAC_SWITCH";
         };
-
-        lgtm: lgtm {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings = <&none &kp LS(O) &kp H &kp SPACE &kp S &kp H &kp I &kp T &kp COMMA &kp SPACE &kp T &kp H &kp I &kp S &kp SPACE &kp C &kp O &kp D &kp E &kp SPACE &kp I &kp S &kp SPACE &kp A &kp W &kp E &kp S &kp O &kp M &kp E &kp EXCL &kp EXCL &kp EXCL>;
-            label = "LGTM";
-        };
     };
 
     keymap {
