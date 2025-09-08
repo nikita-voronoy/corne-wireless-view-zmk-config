@@ -13,7 +13,7 @@
         compatible = "zmk,combos";
 
         linux_printscreen {
-            bindings = <&kp LG(LS(PRINTSCREEN))>;
+            bindings = <&kp LG(LS(S))>;
             key-positions = <27 28>;
             layers = <0>;
         };
